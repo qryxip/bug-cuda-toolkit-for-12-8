@@ -15,4 +15,4 @@ jobs:
           sudo mv cuda-ubuntu$ubuntu_version.pin /etc/apt/preferences.d/cuda-repository-pin-600
           sudo add-apt-repository deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu$ubuntu_version/x86_64/ /
           sudo apt-get update
-          sudo apt-get -y install cuda-12-8
+          sudo apt-get -y install cuda-12-9
