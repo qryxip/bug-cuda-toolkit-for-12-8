@@ -5,10 +5,10 @@ on:
 
 jobs:
   install:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - run: |
-          ubuntu_version=2204
+          ubuntu_version=2404
           wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu$ubuntu_version/x86_64/cuda-keyring_1.1-1_all.deb -O cuda_keyring.deb
           sudo dpkg -i cuda_keyring.deb
           wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu$ubuntu_version/x86_64/cuda-ubuntu$ubuntu_version.pin
