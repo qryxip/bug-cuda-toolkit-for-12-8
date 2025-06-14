@@ -1,0 +1,18 @@
+name: 12.8-direct
+
+on:
+  workflow_dispatch
+
+jobs:
+  install:
+    runs-on: ubuntu-22.04
+    steps:
+      - run: |
+          ubuntu_version=2204
+          wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu$ubuntu_version/x86_64/cuda-keyring_1.1-1_all.deb -O cuda_keyring.deb
+          sudo dpkg -i cuda_keyring.deb
+          wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu$ubuntu_version/x86_64/cuda-ubuntu$ubuntu_version.pin
+          sudo mv cuda-ubuntu$ubuntu_version.pin /etc/apt/preferences.d/cuda-repository-pin-600
+          sudo add-apt-repository deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu$ubuntu_version/x86_64/ /
+          sudo apt-get update
+          sudo apt-get -y install cuda-12-8
